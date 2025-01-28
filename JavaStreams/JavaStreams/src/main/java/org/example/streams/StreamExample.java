@@ -30,7 +30,7 @@ public class StreamExample {
         System.out.println("********************* map() y filter() *************************");
         names.stream()
                 .map(String::toUpperCase)
-                .filter((name) -> name.startsWith("A"))
+                .filter(name -> name.startsWith("A"))
                 .forEach(System.out::println);
 
         // sorted(): Ordena los elementos del stream
@@ -55,7 +55,7 @@ public class StreamExample {
         // collect(): Recoge todos los elementos en una coleccion
         System.out.println("********************* collect() *************************");
         List<String> result1 = names.stream()
-                .map((name) -> name.toUpperCase())
+                .map(name -> name.toUpperCase())
                 .collect(Collectors.toList()); //.toList(); a partir de java17
 
         result1.stream().forEach(System.out::println);
@@ -82,7 +82,7 @@ public class StreamExample {
         // Resumido: .anyMatch((name) -> name.startsWith("J"))
         System.out.println("********************* anyMatch() *************************");
         boolean result2 = names.stream()
-                .anyMatch((name) -> {
+                .anyMatch(name -> {
                     return name.startsWith("J");
                 });
         System.out.println(result2);
@@ -90,13 +90,13 @@ public class StreamExample {
         //allMatch(): Verifica si TODOS los elementos cumplen la condicion
         System.out.println("********************* allMatch() *************************");
         boolean result3 = names.stream()
-                .allMatch((name) -> name.startsWith("A"));
+                .allMatch(name -> name.startsWith("A"));
         System.out.println(result3);
 
         //noneMatch(): Verifica si NINGUN elemento cumple la condicion
         System.out.println("********************* anoneMatch() *************************");
         boolean result4 = names.stream()
-                .noneMatch((name) -> name.length() == 10);
+                .noneMatch(name -> name.length() == 10);
         System.out.println(result4);
     }
 }

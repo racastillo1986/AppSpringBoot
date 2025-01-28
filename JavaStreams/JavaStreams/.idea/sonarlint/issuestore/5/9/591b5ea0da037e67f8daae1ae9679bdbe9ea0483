@@ -1,55 +1,45 @@
 
-r	java:S106"+Replace this use of System.out by a logger.(™ºîÈùÿÿÿÿ8ÏÛÑòÊ2J$e168dd39-dd08-4f6a-a6ea-ef3ccc443e8b
+r	java:S106"+Replace this use of System.out by a logger.(™ºîÈùÿÿÿÿ8ÏÛÑòÊ2J$21081d42-48d5-4855-86a9-6bedab113c10
 u
-java:S1611"2Remove the parentheses around the "name" parameter(ŸêøÄ8ĞÛÑòÊ2J$ebf36fc2-25af-4b1a-9fd0-aa386494c685
-r	java:S106"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8ÑÛÑòÊ2J$0f502392-6c2d-47ca-9642-f7fa11175adf
-r	java:S106"+Replace this use of System.out by a logger.(Ì‘°µüÿÿÿÿ8ÑÛÑòÊ2J$37026801-2952-45e6-abb0-7376c7436f79
+java:S1611"2Remove the parentheses around the "name" parameter(ŸêøÄ8ĞÛÑòÊ2J$fe6dc731-f4f1-4525-989f-96ead863a5e7
+r	java:S106"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8ÑÛÑòÊ2J$46c3ab4b-8677-47dc-841e-7df57373aa93
+r	java:S106"+Replace this use of System.out by a logger.(Ì‘°µüÿÿÿÿ8ÑÛÑòÊ2J$722b4287-766b-4a7c-8595-e28b655317e5
 u
-java:S1611"2Remove the parentheses around the "name" parameter(Ã›òâ8ÑÛÑòÊ2J$06ed1692-9a4b-4b6c-b8b4-7aa31e8e8151
+java:S1611"2Remove the parentheses around the "name" parameter(Ã›òâ8ÑÛÑòÊ2J$897bbb25-2836-46a4-a680-fc038f899738
 –
-java:S1602"SRemove useless curly braces around statement and then remove useless return keyword(Ã›òâ8ÒÛÑòÊ2J$6edf89de-fe89-4e8c-a0ff-8852787371a0
+java:S1602"SRemove useless curly braces around statement and then remove useless return keyword(Ã›òâ8ÒÛÑòÊ2J$714a7486-36f6-4d74-a1ab-85d413563f8a
 ƒ
-java:S1612"@Replace this lambda with method reference 'String::toUpperCase'.(Ã›òâ8ÓÛÑòÊ2J$ab149e9b-0a5d-4de0-8c54-f0eab1584527
-r	java:S106"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8ÓÛÑòÊ2J$0a662abd-30f1-4c8f-9018-2c1cf0da5999
-r	java:S106"+Replace this use of System.out by a logger.(ß“ãÜøÿÿÿÿ8ÓÛÑòÊ2J$ee891121-a0be-4a5c-bbd9-832430284a1a
+java:S1612"@Replace this lambda with method reference 'String::toUpperCase'.(Ã›òâ8ÓÛÑòÊ2J$ce46ae78-3d71-4cef-a43d-d0fcd41c173e
+r	java:S106"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8ÓÛÑòÊ2J$57b86d0e-419e-4de0-8d9a-eeafa1e75a74
+r	java:S106"+Replace this use of System.out by a logger.(ß“ãÜøÿÿÿÿ8ÓÛÑòÊ2J$a6471184-0c5f-4345-a64c-fa9574ea675a
+r	java:S106""+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8ÔÛÑòÊ2J$3f0d22cc-bc97-4ea1-b272-471f5d36b6e6
+r	java:S106%"+Replace this use of System.out by a logger.(›éŸûÿÿÿÿ8ÔÛÑòÊ2J$6ee54b66-a87a-48cd-83f5-b12cc73b2ed5
+r	java:S106("+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8ÔÛÑòÊ2J$a09b5eb1-82f3-4f08-8c76-45d9a8234a02
+m	java:S106+"+Replace this use of System.out by a logger.(™ã ğ8ÔÛÑòÊ2J$7fdf1ec4-5aad-4e86-a6e8-2d486ee441fb
 z
-java:S1611!"2Remove the parentheses around the "name" parameter(¤Éå°úÿÿÿÿ8ÔÛÑòÊ2J$83e7fcc6-0c66-4753-b04b-a790de2b8c28
-r	java:S106""+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8ÔÛÑòÊ2J$08c20844-d5b3-4706-8e6f-dd70b9b8a588
-r	java:S106%"+Replace this use of System.out by a logger.(›éŸûÿÿÿÿ8ÔÛÑòÊ2J$ac6c3521-8662-45fc-848a-b9f33ee02653
-r	java:S106("+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8ÔÛÑòÊ2J$a4f0d2a1-ae92-4b03-a6b9-9986ff4abc58
-m	java:S106+"+Replace this use of System.out by a logger.(™ã ğ8ÔÛÑòÊ2J$09468927-8a0a-437e-bd00-90b851c6f612
-z
-java:S1611-"2Remove the parentheses around the "name" parameter(ìı† øÿÿÿÿ8ÕÛÑòÊ2J$234331fe-9f47-4bdc-9477-d38a94cfabf6
+java:S1611-"2Remove the parentheses around the "name" parameter(ìı† øÿÿÿÿ8ÕÛÑòÊ2J$7de0d380-554d-4fec-8447-8a03600bf4cb
 t
-java:S1602-",Remove useless curly braces around statement(ìı† øÿÿÿÿ8ÕÛÑòÊ2J$66eb60ae-e88e-4206-af72-7851a1aeef5c
+java:S1602-",Remove useless curly braces around statement(ìı† øÿÿÿÿ8ÕÛÑòÊ2J$f0b859e4-8bf9-459b-b278-7ec77ffb5bc5
 ˆ
-java:S1612-"@Replace this lambda with method reference 'System.out::println'.(ìı† øÿÿÿÿ8ÕÛÑòÊ2J$480fd9e8-d136-4f11-ab41-74343ed1d591
-m	java:S106."+Replace this use of System.out by a logger.(«‹Îõ8ÕÛÑòÊ2J$dabef837-9d03-4a68-b175-d35287f8b795
-m	java:S1062"+Replace this use of System.out by a logger.(ïÁÃ8ÕÛÑòÊ2J$2a014652-4b3c-4d7b-9202-e18b152f2a22
-r	java:S1065"+Replace this use of System.out by a logger.(®ıáëûÿÿÿÿ8ÕÛÑòÊ2J$e40303cb-8392-4391-8bb9-7485566ebece
-r	java:S1068"+Replace this use of System.out by a logger.(áÁ¾¡üÿÿÿÿ8ÖÛÑòÊ2J$ae4d106d-b2e7-4fa0-a38d-90dc20f12cdf
-z
-java:S1611:"2Remove the parentheses around the "name" parameter(Ï»×“üÿÿÿÿ8ÖÛÑòÊ2J$ba4c400b-15d7-4fcf-a9f3-9853f1bcce52
+java:S1612-"@Replace this lambda with method reference 'System.out::println'.(ìı† øÿÿÿÿ8ÕÛÑòÊ2J$143ba0df-2eba-4d75-8fc6-d794e3726328
+m	java:S106."+Replace this use of System.out by a logger.(«‹Îõ8ÕÛÑòÊ2J$45a7bef9-0ee7-4cad-a17c-a597b84ee27c
+m	java:S1062"+Replace this use of System.out by a logger.(ïÁÃ8ÕÛÑòÊ2J$78092298-795e-4278-bc6d-9a1e6fb33d4b
+r	java:S1065"+Replace this use of System.out by a logger.(®ıáëûÿÿÿÿ8ÕÛÑòÊ2J$e04ac61c-b82b-440c-9579-6b69e724e05f
+r	java:S1068"+Replace this use of System.out by a logger.(áÁ¾¡üÿÿÿÿ8ÖÛÑòÊ2J$9605dc6e-2c65-4ab9-8561-be1446afee09
 ˆ
-java:S1612:"@Replace this lambda with method reference 'String::toUpperCase'.(Ï»×“üÿÿÿÿ8ÖÛÑòÊ2J$05025a13-397e-4f98-ab05-adf82fa612be
-m	java:S106="+Replace this use of System.out by a logger.(ÇÑÅö8ÖÛÑòÊ2J$391e2398-f413-486c-82c5-db9660e12b51
-r	java:S106@"+Replace this use of System.out by a logger.(„ƒêÿûÿÿÿÿ8×ÛÑòÊ2J$0b119919-92d5-4d53-b023-63b4a0c41d45
-r	java:S106C"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8×ÛÑòÊ2J$5d8fbfa6-9441-4156-ac2f-0d8980e1e9b9
-r	java:S106F"+Replace this use of System.out by a logger.(üÛ‰¶ûÿÿÿÿ8×ÛÑòÊ2J$d9201aa7-361c-401e-bb05-983064f300c2
-r	java:S106I"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8×ÛÑòÊ2J$4652571a-c6e7-4bfa-9c5f-49d9a27579f1
-r	java:S106L"+Replace this use of System.out by a logger.(¥éÍïøÿÿÿÿ8×ÛÑòÊ2J$5ee5ab78-de0b-4bee-8501-433275b5c312
-r	java:S106O"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8ØÛÑòÊ2J$da553179-da18-4c70-af81-7da19826c7e2
-m	java:S106S"+Replace this use of System.out by a logger.(ËĞáñ8ØÛÑòÊ2J$aea76eac-9218-4d99-a7e4-6801343ea221
-z
-java:S1611U"2Remove the parentheses around the "name" parameter(…æšùÿÿÿÿ8ØÛÑòÊ2J$fec070e7-2293-4c35-819a-5e8aa3502f4b
+java:S1612:"@Replace this lambda with method reference 'String::toUpperCase'.(îİ¯ÿûÿÿÿÿ8ÖÛÑòÊ2J$7cf2aff3-4868-41a8-823e-36fb4caa1730
+m	java:S106="+Replace this use of System.out by a logger.(ÇÑÅö8ÖÛÑòÊ2J$32ae4b6c-4023-428f-9171-ca6362c621c8
+r	java:S106@"+Replace this use of System.out by a logger.(„ƒêÿûÿÿÿÿ8×ÛÑòÊ2J$1f3e56e4-03f0-4c94-9d24-56ab983ebb3c
+r	java:S106C"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8×ÛÑòÊ2J$440b3c0d-47b2-4ac7-82ee-4bef02688492
+r	java:S106F"+Replace this use of System.out by a logger.(üÛ‰¶ûÿÿÿÿ8×ÛÑòÊ2J$d59c1a36-6edf-4a2e-a64e-c706862c38d5
+r	java:S106I"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8×ÛÑòÊ2J$7ec37f64-7697-4af2-a9a8-6ff39e39de09
+r	java:S106L"+Replace this use of System.out by a logger.(¥éÍïøÿÿÿÿ8×ÛÑòÊ2J$60d6bebc-ac91-4dad-9e03-5d7e65c48e79
+r	java:S106O"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8ØÛÑòÊ2J$ef5aa62f-625c-4f5d-83bf-230e73750230
+m	java:S106S"+Replace this use of System.out by a logger.(ËĞáñ8ØÛÑòÊ2J$cd000533-0ba6-4c99-ace9-80e79740ae0b
 ›
-java:S1602U"SRemove useless curly braces around statement and then remove useless return keyword(…æšùÿÿÿÿ8ØÛÑòÊ2J$1edb3090-4b20-4644-a628-ee3df3d9c1bd
-m	java:S106X"+Replace this use of System.out by a logger.(àÓ¨¨8ÙÛÑòÊ2J$a4d0a045-b15d-4bc4-927b-c9ae2a3eef2b
-m	java:S106["+Replace this use of System.out by a logger.(â„à—8ÙÛÑòÊ2J$6253be6e-0f87-493d-a8bb-eb16f76f0772
-z
-java:S1611]"2Remove the parentheses around the "name" parameter(ÄÃÈ¢üÿÿÿÿ8ÙÛÑòÊ2J$17210ec2-a593-4e92-9a91-3175732c7f43
-r	java:S106^"+Replace this use of System.out by a logger.(…ÚÇˆıÿÿÿÿ8ÙÛÑòÊ2J$0ea9f1f9-6349-423b-bf8c-a7ae9fa41653
-m	java:S106a"+Replace this use of System.out by a logger.(İÄÎã8ÙÛÑòÊ2J$f080b3a3-c7e6-4394-a41a-e7affc69e6c0
-z
-java:S1611c"2Remove the parentheses around the "name" parameter(¨¾ØÑüÿÿÿÿ8ÚÛÑòÊ2J$c75ef183-af62-4d7e-af84-b054375f4eef
-L	java:S106d"+Replace this use of System.out by a logger.(²Õ·Àøÿÿÿÿ8µÔÒòÊ2
+java:S1602U"SRemove useless curly braces around statement and then remove useless return keyword(éæü™şÿÿÿÿ8ØÛÑòÊ2J$87d1cd52-89c0-4235-893a-443995905aa9
+m	java:S106X"+Replace this use of System.out by a logger.(àÓ¨¨8ÙÛÑòÊ2J$efc57f16-e39d-4de3-bd8a-708626b80383
+m	java:S106["+Replace this use of System.out by a logger.(â„à—8ÙÛÑòÊ2J$cb0672af-b491-45cd-8fe3-bf5e2bc99455
+r	java:S106^"+Replace this use of System.out by a logger.(…ÚÇˆıÿÿÿÿ8ÙÛÑòÊ2J$cc0a2bf2-3837-4119-89fd-82a3928660e4
+m	java:S106a"+Replace this use of System.out by a logger.(İÄÎã8ÙÛÑòÊ2J$594e0026-6752-4e19-bb20-5dcf59ce5051
+r	java:S106d"+Replace this use of System.out by a logger.(²Õ·Àøÿÿÿÿ8µÔÒòÊ2J$c342e616-7ac5-4239-89c1-65bc71fad963
