@@ -1,0 +1,6 @@
+
+	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8†¶¥÷Ê2J$4d03fb2f-5d4a-490b-82ec-a75789fddbdd
+•
+java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(‰ôÆÿÿÿÿÿ8šò¬÷Ê2J$590b0b97-7ccb-4a4c-b427-05bee2f5be10
+~	java:S125"<This block of commented-out lines of code should be removed.(ó½Ã–8¯¬÷Ê2J$f42584e1-ea28-4587-b693-c97358680291
+r	java:S106"+Replace this use of System.out by a logger.(˜ã£¡ûÿÿÿÿ8ˆ¡¦÷Ê2J$df0e97c5-32b5-48d8-be74-c55e016ffa7f
