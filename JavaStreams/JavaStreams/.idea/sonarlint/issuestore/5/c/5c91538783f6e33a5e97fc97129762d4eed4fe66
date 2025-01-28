@@ -1,0 +1,7 @@
+
+¥
+java:S4276"]Refactor this code to use the more specialised Functional Interface 'BinaryOperator<Integer>'(ğø•Ùÿÿÿÿÿ8ˆÊÜìÊ2J$2f031eca-ec08-4a5a-9fdb-f93c5685d682
+›
+java:S1602"SRemove useless curly braces around statement and then remove useless return keyword(ğø•Ùÿÿÿÿÿ8‰ÊÜìÊ2J$e7e6377c-620f-4d39-a2e9-9683145b5f69
+m	java:S106"+Replace this use of System.out by a logger.(¨×¶´8‹ÊÜìÊ2J$73c4524f-154f-4d9d-b025-644816153c28
+~	java:S125"<This block of commented-out lines of code should be removed.(à ÍØ8çÅİìÊ2J$9dadd593-1d77-452d-b861-8ddd34623939

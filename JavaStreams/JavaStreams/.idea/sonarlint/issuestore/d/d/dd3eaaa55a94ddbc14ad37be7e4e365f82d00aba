@@ -1,0 +1,9 @@
+
+œ
+java:S4276	"YRefactor this code to use the more specialised Functional Interface 'IntFunction<String>'(üË±ƒ8¬Ÿ“ìÊ2J$a88d308a-4aa6-4101-ac51-8868aa025cb4
+t
+java:S1611	"1Remove the parentheses around the "num" parameter(üË±ƒ8®Ÿ“ìÊ2J$c16a7ac6-3b1d-4e80-948d-408caf69e0a0
+–
+java:S1602	"SRemove useless curly braces around statement and then remove useless return keyword(üË±ƒ8®Ÿ“ìÊ2J$74d0ca9d-f269-4e40-bed4-bb13cc9bbae4
+m	java:S106"+Replace this use of System.out by a logger.(ºüÍı8°Ÿ“ìÊ2J$c1f5cfae-c7b1-4661-9ca3-24ed95c32d22
+ƒ	java:S125"<This block of commented-out lines of code should be removed.(–µùÂüÿÿÿÿ8£î”ìÊ2J$70798716-9980-413f-8b4a-b949bd2548bd

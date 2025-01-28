@@ -1,0 +1,8 @@
+
+n
+java:S1602",Remove useless curly braces around statement(¸õ¨
+8­÷¦êÊ2J$5cdfa219-9140-4271-b14a-8c8a14bcfd27
+m	java:S106"+Replace this use of System.out by a logger.( §‡Ý8¯÷¦êÊ2J$12b6025e-9358-4b9a-8d77-774ffc188895
+]	java:S125"<This block of commented-out lines of code should be removed.(ªˆ†üøÿÿÿÿ8Ù…æêÊ2
+€
+java:S1128"8Remove this unused import 'java.util.function.Consumer'.(Ì†ƒÔùÿÿÿÿ8û°äêÊ2J$e15fcde8-6a8e-46ad-be0a-834a2fbd9b96

@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -24,7 +23,7 @@ public class MailController {
     private IEmailService emailService;
 
     @PostMapping("/sendMessage")
-    public ResponseEntity<?> receiveRequestEmail(@RequestBody EmailDTO emailDTO){
+    public ResponseEntity<Object> receiveRequestEmail(@RequestBody EmailDTO emailDTO){
 
         System.out.println("Mensaje Recibido " + emailDTO);
 
@@ -38,7 +37,7 @@ public class MailController {
 
 
     @PostMapping("/sendMessageFile")
-    public ResponseEntity<?> receiveRequestEmailWithFile(@ModelAttribute EmailFileDTO emailFileDTO){
+    public ResponseEntity<Object> receiveRequestEmailWithFile(@ModelAttribute EmailFileDTO emailFileDTO){
 
         try {
             String fileName = emailFileDTO.getFile().getOriginalFilename();

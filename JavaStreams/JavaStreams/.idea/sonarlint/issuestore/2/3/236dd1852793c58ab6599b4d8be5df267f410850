@@ -1,0 +1,7 @@
+
+y
+java:S1611	"1Remove the parentheses around the "str" parameter(ÿ–Úìùÿÿÿÿ8á•¡íÊ2J$186ea16b-a5f0-4be1-b14b-c452b9e01520
+›
+java:S1602	"SRemove useless curly braces around statement and then remove useless return keyword(ÿ–Úìùÿÿÿÿ8ã•¡íÊ2J$0c05fed2-d67d-491f-8f98-32e44b6a7010
+r	java:S106"+Replace this use of System.out by a logger.(¹“ÿ‹ÿÿÿÿÿ8æ•¡íÊ2J$0f98a83e-b60c-45cf-ae95-1366a5e5f1b0
+~	java:S125"<This block of commented-out lines of code should be removed.(Ø†©Ä8Ë¾¡íÊ2J$1eaadfd7-c3c3-4820-a9d7-27f31aea144f
