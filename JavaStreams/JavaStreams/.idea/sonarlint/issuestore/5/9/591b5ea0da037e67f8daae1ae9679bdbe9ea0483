@@ -1,3 +1,37 @@
 
-Ä
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Çµí‘8±øâîÊ2J$e830d132-0c41-4569-9ab1-70e1402a1bce
+r	java:S106"+Replace this use of System.out by a logger.(™ºîÈùÿÿÿÿ8¥¼ÏñÊ2J$6c5d6d8f-0899-455b-9fe5-87e746a64c01
+u
+java:S1611"2Remove the parentheses around the "name" parameter(ŸêøÄ8¥¼ÏñÊ2J$fa2aeaa9-60ab-437c-ae3f-6baaf0c768a1
+r	java:S106"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8¦¼ÏñÊ2J$15ab52ac-a4fb-49da-86fc-81c2c617d10f
+r	java:S106"+Replace this use of System.out by a logger.(Ì‘°µüÿÿÿÿ8¦¼ÏñÊ2J$c94cecdc-94d0-4ea7-9f71-20ee903b232d
+u
+java:S1611"2Remove the parentheses around the "name" parameter(Ã›òâ8¦¼ÏñÊ2J$b31cb094-e0c7-46c1-8b5a-68c0d06f0147
+–
+java:S1602"SRemove useless curly braces around statement and then remove useless return keyword(Ã›òâ8§¼ÏñÊ2J$1b165002-9e3d-4649-9296-8f964d36f75d
+ƒ
+java:S1612"@Replace this lambda with method reference 'String::toUpperCase'.(Ã›òâ8¨¼ÏñÊ2J$fd361e42-3e37-492b-8764-3ecc943ea608
+r	java:S106"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8©¼ÏñÊ2J$00b26440-e642-483f-9061-2490568bc317
+r	java:S106"+Replace this use of System.out by a logger.(ß“ãÜøÿÿÿÿ8©¼ÏñÊ2J$f639db39-6fce-46a3-aa8c-163f362d5c23
+z
+java:S1611!"2Remove the parentheses around the "name" parameter(¤Éå°úÿÿÿÿ8©¼ÏñÊ2J$fec1dca3-f316-4745-8d85-ec3ead2489cb
+r	java:S106""+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8ª¼ÏñÊ2J$430d0d33-effa-4891-9212-592366806a2d
+r	java:S106%"+Replace this use of System.out by a logger.(›éŸûÿÿÿÿ8ª¼ÏñÊ2J$bb9a9df8-762c-44c0-87df-1ddd8ba74a1f
+r	java:S106("+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8ª¼ÏñÊ2J$c50f3be3-9b3c-4030-9a82-f90adbf919a6
+m	java:S106+"+Replace this use of System.out by a logger.(™ã ğ8ª¼ÏñÊ2J$e905d662-ea55-4b12-ba21-3ae03050907a
+z
+java:S1611-"2Remove the parentheses around the "name" parameter(ìı† øÿÿÿÿ8ª¼ÏñÊ2J$e3d84371-714c-41bf-a60d-0c4185fd6799
+t
+java:S1602-",Remove useless curly braces around statement(ìı† øÿÿÿÿ8ª¼ÏñÊ2J$f9751960-f9e7-48a4-ba71-e1a1e9e608e6
+ˆ
+java:S1612-"@Replace this lambda with method reference 'System.out::println'.(ìı† øÿÿÿÿ8«¼ÏñÊ2J$d9643539-46f6-4927-af01-0648dbbe20e8
+m	java:S106."+Replace this use of System.out by a logger.(«‹Îõ8«¼ÏñÊ2J$30beccbd-c013-4c1a-adfe-0c1ab51516b7
+m	java:S1062"+Replace this use of System.out by a logger.(ïÁÃ8«¼ÏñÊ2J$7f283857-15e6-4835-850a-3dd2dfc10d24
+r	java:S1065"+Replace this use of System.out by a logger.(®ıáëûÿÿÿÿ8«¼ÏñÊ2J$d5a3b59d-2cef-4a5f-9049-d16c91c6aaba
+r	java:S1068"+Replace this use of System.out by a logger.(áÁ¾¡üÿÿÿÿ8«¼ÏñÊ2J$84f220d8-9431-4e8d-b422-d4ab66b54968
+z
+java:S1611:"2Remove the parentheses around the "name" parameter(Ï»×“üÿÿÿÿ8¬¼ÏñÊ2J$69a487c8-3f9a-4d4e-9539-7e9bba020753
+ˆ
+java:S1612:"@Replace this lambda with method reference 'String::toUpperCase'.(Ï»×“üÿÿÿÿ8¬¼ÏñÊ2J$0e1ddcfa-de5a-435c-b893-ff18ef114d7b
+m	java:S106="+Replace this use of System.out by a logger.(ÇÑÅö8¬¼ÏñÊ2J$a54241dc-f96e-44ca-b2a9-bb3554e44010
+r	java:S106@"+Replace this use of System.out by a logger.(„ƒêÿûÿÿÿÿ8óËÒñÊ2J$e3eca58b-3d21-4db0-9790-30d0a8895798
+L	java:S106C"+Replace this use of System.out by a logger.(¹¦…‡úÿÿÿÿ8ºûÓñÊ2
