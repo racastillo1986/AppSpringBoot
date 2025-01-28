@@ -1,8 +1,8 @@
 
 š
 java:S4276
-"WRefactor this code to use the more specialised Functional Interface 'IntBinaryOperator'(÷Ãæ‰8ŞîÊ2J$0ec22760-fa93-4172-8984-299313af5ac1
+"WRefactor this code to use the more specialised Functional Interface 'IntBinaryOperator'(÷Ãæ‰8ŞîÊ2J$0988dd30-26a2-412b-9ece-c2dd27aeffce
 –
 java:S1602
-"SRemove useless curly braces around statement and then remove useless return keyword(÷Ãæ‰8ŸŞîÊ2J$a410939d-61f2-4c8e-931b-436abc895ff9
-L	java:S106"+Replace this use of System.out by a logger.(®ıáëûÿÿÿÿ8İàîÊ2
+"SRemove useless curly braces around statement and then remove useless return keyword(÷Ãæ‰8ŸŞîÊ2J$2da7745b-6902-47c5-9a74-a0d7c99c50bf
+r	java:S106"+Replace this use of System.out by a logger.(®ıáëûÿÿÿÿ8İàîÊ2J$439e02d2-e7e3-42b9-b6ac-4f6607f933da

@@ -21,3 +21,11 @@ k
 ;src/main/java/org/example/lambdas/binary/BinaryExample.java,6\1\613e65da7eb8c4f3c7c35bc532053c068062f15e
 s
 Csrc/main/java/org/example/lambdas/binary/BinaryOperatorExample.java,2\a\2afeefeb70d37f652269bed462844edc5123c65a
+q
+Asrc/main/java/org/example/lambdas/unary/UnaryOperatorExample.java,0\1\01dd75616a728d955357a71c0937de876e3310d7
+o
+?src/main/java/org/example/lambdas/runnable/RunnableExample.java,a\a\aa517853a1d4258ed289d855b7711a105a10ed58
+o
+?src/main/java/org/example/lambdas/callable/CallableExample.java,f\8\f83c5604132b9298fc78c2fb7ebafcea33bc59a7
+d
+4src/main/java/org/example/streams/StreamExample.java,5\9\591b5ea0da037e67f8daae1ae9679bdbe9ea0483

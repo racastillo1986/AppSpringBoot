@@ -1,0 +1,9 @@
+
+™
+java:S4276"VRefactor this code to use the more specialised Functional Interface 'IntUnaryOperator'(ÚŽÊ¸8í¾¬îÊ2J$7c3693bb-a64d-4055-9dbc-9bdd512a1fc7
+w
+java:S1611"4Remove the parentheses around the "number" parameter(ÚŽÊ¸8î¾¬îÊ2J$bba6add0-1a2e-489d-8e96-9975f9f0a135
+–
+java:S1602"SRemove useless curly braces around statement and then remove useless return keyword(ÚŽÊ¸8ï¾¬îÊ2J$61a0e99d-79c8-443a-b086-9152672da8a9
+]	java:S125"<This block of commented-out lines of code should be removed.(ÏìÙÌùÿÿÿÿ8àê¬îÊ2
+r	java:S106"+Replace this use of System.out by a logger.(®ýáëûÿÿÿÿ8ñ¾¬îÊ2J$26550680-247e-420b-b196-9ad14d5c7c62

@@ -1,0 +1,6 @@
+
+	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ŒÑîÊ2J$89929b41-efb9-49bb-9ff2-2fe89b70b2dc
+›
+java:S1602"SRemove useless curly braces around statement and then remove useless return keyword(š‘õüÿÿÿÿ8”ÑîÊ2J$783f1794-deaa-4cae-b06c-df89588f9758
+ƒ	java:S125"<This block of commented-out lines of code should be removed.(À¦¸Úşÿÿÿÿ8•ÑîÊ2J$ae210287-7c5d-40ae-8348-7160b3dff542
+r	java:S106"+Replace this use of System.out by a logger.(®ıáëûÿÿÿÿ8–ÑîÊ2J$43e6ec56-f1e2-4582-8fcc-2ff66ad127c4
