@@ -19,7 +19,11 @@
     <button mat-menu-item routerLink="/admin/loadPagos">Cargar Pagos</button>
   </mat-menu>
 
-  <button mat-raised-button color="accent">Salir</button>
+  <button mat-button *ngIf="authService.isAuthenticated">
+    {{ authService.username }}
+  </button>
+
+  <button mat-raised-button color="accent" (click) = "logout()">Salir</button>
 </mat-toolbar>
 
 <mat-drawer-container>

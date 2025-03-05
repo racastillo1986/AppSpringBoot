@@ -7,7 +7,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 
 // AngularMaterial
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -24,9 +24,18 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthorizationGuard } from './guards/authorization.guard';
+import { EstudianteDetailsComponent } from './estudiante-details/estudiante-details.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +48,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     PagosComponent,
     EstudiantesComponent,
-    DashboardComponent
+    DashboardComponent,
+    EstudianteDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -53,9 +63,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    HttpClientModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
-  providers: [
+  providers: [AuthGuard,
+    AuthorizationGuard,
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
