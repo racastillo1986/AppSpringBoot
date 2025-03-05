@@ -11,16 +11,19 @@ import { PagosComponent } from './pagos/pagos.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 
 const routes: Routes = [
-  {path: "", component: LoginComponent },
-  {path:"home", component:HomeComponent},
-  {path:"profile", component:ProfileComponent},
-  {path:"login", component:LoginComponent},
-  {path:"loadEstudiantes", component:LoadEstudiantesComponent},
-  {path:"loadPagos", component:LoadPagosComponent},
-  {path:"dashboard", component:DashboardComponent},
-  {path:"estudiantes", component:EstudiantesComponent},
-  {path:"pagos", component:PagosComponent},
-  {path:"admin", component:AdminTemplateComponent}
+  { path: "", component: LoginComponent },
+  { path: "login", component: LoginComponent },
+  { path: "admin", component: AdminTemplateComponent,
+    children: [
+      { path: "home", component: HomeComponent },
+      { path: "profile", component: ProfileComponent },
+      { path: "loadEstudiantes", component: LoadEstudiantesComponent},
+      { path: "loadPagos", component: LoadPagosComponent},
+      { path: "dashboard", component: DashboardComponent },
+      { path: "estudiantes", component: EstudiantesComponent },
+      { path: "pagos", component: PagosComponent }
+    ]
+  },
 ];
 
 @NgModule({
