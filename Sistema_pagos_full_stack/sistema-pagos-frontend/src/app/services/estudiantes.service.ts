@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Estudiante, Pago } from '../models/estudiantes.model';
+import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 
 
@@ -12,22 +12,19 @@ export class EstudiantesService {
 
   constructor(private http: HttpClient) { }
 
-  backendHost: any = "http://localhost:8081"
-
-
-  public getAllPagos(): Observable<Array<Pago>> {
-    return this.http.get<Array<Pago>>(`${this.backendHost}/pagos`);
+  public getAllPagos(): Observable<Array<Pago>> {    
+    return this.http.get<Array<Pago>>(`${environment.backendHost}/pagos`);
   }
 
   public getAllEstudiantes(): Observable<Array<Estudiante>> {
-    return this.http.get<Array<Estudiante>>(`${this.backendHost}/estudiantes`);
+    return this.http.get<Array<Estudiante>>(`${environment.backendHost}/estudiantes`);
   }
 
   public getPagosDeEstudiante(codigo: string): Observable<Array<Pago>> {
-    return this.http.get<Array<Pago>>(`${this.backendHost}/estudiantes/${codigo}/pagos`);
+    return this.http.get<Array<Pago>>(`${environment.backendHost}/estudiantes/${codigo}/pagos`);
   }
 
   public guardarPago(formData: any): Observable<Pago> {
-    return this.http.post<Pago>(`${this.backendHost}/pagos`, formData);
+    return this.http.post<Pago>(`${environment.backendHost}/pagos`, formData);
   }
 }

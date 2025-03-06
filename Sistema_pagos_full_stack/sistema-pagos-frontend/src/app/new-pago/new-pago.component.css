@@ -1,0 +1,14 @@
+mat-form-field {
+    display: block;
+}
+
+.pago-form {
+    width: 500px;
+}
+
+.centro {
+    display: flex;
+    justify-content: center;/* Centra horizontalmente */
+    align-items: center;/* Centra verticalmente */
+    height: 80vh;/* Para asegurar que ocupe toda la altura de la pantalla */    
+}
