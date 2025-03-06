@@ -27,6 +27,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -36,6 +39,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthorizationGuard } from './guards/authorization.guard';
 import { EstudianteDetailsComponent } from './estudiante-details/estudiante-details.component';
+import { NewPagoComponent } from './new-pago/new-pago.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +53,8 @@ import { EstudianteDetailsComponent } from './estudiante-details/estudiante-deta
     PagosComponent,
     EstudiantesComponent,
     DashboardComponent,
-    EstudianteDetailsComponent
+    EstudianteDetailsComponent,
+    NewPagoComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +72,10 @@ import { EstudianteDetailsComponent } from './estudiante-details/estudiante-deta
     MatTableModule,
     HttpClientModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule
   ],
   providers: [AuthGuard,
     AuthorizationGuard,
