@@ -18,7 +18,7 @@ public class TrxServicio {
     }
 
     @Async
-    public CompletableFuture<List<TrxDiarias>> listadoTrx(String fechaDesde, String fechaHasta) throws Exception {
+    public CompletableFuture<List<TrxDiarias>> listadoTrx(String fechaDesde, String fechaHasta) {
         List<TrxDiarias> listaTrx = repositorio.listaTrx(fechaDesde, fechaHasta);
         return CompletableFuture.completedFuture(listaTrx);
     }

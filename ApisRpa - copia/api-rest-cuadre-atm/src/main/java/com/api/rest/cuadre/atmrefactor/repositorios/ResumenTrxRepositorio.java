@@ -1,25 +1,77 @@
 package com.api.rest.cuadre.atmrefactor.repositorios;
 
 import com.api.rest.cuadre.atmrefactor.entidades.ResumenTrx;
-import com.api.rest.cuadre.utils.Utilerias;
 import lombok.extern.slf4j.Slf4j;
+import oracle.jdbc.internal.OracleTypes;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.sql.DataSource;
+import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 @Slf4j
-public class ResumenTrxRepositorio /*extends JpaRepository<ResumenTrx, Long>*/ {
+public class ResumenTrxRepositorio {
 
+    private final DataSource dataSource;
 
+    public ResumenTrxRepositorio(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    public List<ResumenTrx> lista(String fechaDesde, String fechaHasta) {
+
+        List<ResumenTrx> listaResumenTrx = new ArrayList<>();
+
+        try (Connection connection = dataSource.getConnection()) {
+
+            CallableStatement cs = connection.prepareCall("{call RPA_P_RESUMEN_TRX2(?, ?, ?)}");
+            cs.setString(1, fechaDesde);
+            cs.setString(2, fechaHasta);
+            cs.registerOutParameter(3, OracleTypes.CURSOR);
+            cs.execute();
+
+            ResultSet rs = (ResultSet) cs.getObject(3);
+
+            while (rs.next()) {
+                ResumenTrx resumenTrx = new ResumenTrx();
+                resumenTrx.setId(rs.getLong("rownum"));
+                resumenTrx.setCodigoAgencia(rs.getInt("agencia"));
+                resumenTrx.setCodigoClaseCuenta(rs.getInt("codigo_clase_cuenta"));
+                resumenTrx.setDescripcionClase(rs.getString("descripcion_clase"));
+                resumenTrx.setCodigoTipoTransaccion(rs.getInt("Codigo_Tipo_Transaccion"));
+                resumenTrx.setDescripcion(rs.getString("descripcion"));
+                resumenTrx.setValor(rs.getFloat("valor"));
+                resumenTrx.setCantidad(rs.getInt("cantidad"));
+                listaResumenTrx.add(resumenTrx);
+            }
+            rs.close();
+            cs.close();
+        } catch (DataAccessException e) {
+            log.error("Error al ejecutar la consulta SQL: {}", e.getMessage());
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error interno al consultar datos.");
+        } catch (Exception e) {
+            log.error("Error inesperado: {}", e.getMessage());
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error inesperado.");
+        }
+        return listaResumenTrx;
+    }
+}
+/*
+	@Transactional
+    @Modifying
+    @Query(nativeQuery = true, value = "call RPA_P_RESUMEN_TRX(:Gd_fecha_desde, :Gd_fecha_hasta)")
+    void listaProcedure(@Param("Gd_fecha_desde") String gdFechaDesde,
+                        @Param("Gd_fecha_hasta") String gdFechaHasta);
+*/
+
+/*
     private final JdbcTemplate jdbc;
 
     public ResumenTrxRepositorio(JdbcTemplate jdbc) {
@@ -107,49 +159,5 @@ public class ResumenTrxRepositorio /*extends JpaRepository<ResumenTrx, Long>*/ {
         }
     }
 }
-/*
-    public List<ResumenTrx> listaResumen(String fechaDesde, String fechaHasta) throws Exception{
-
-        log.info("");
-
-        List<ResumenTrx> listaResumenTrx = new ArrayList<>();
-
-        try(Connection connection = dataSource.getConnection()){
-
-            CallableStatement cs = connection.prepareCall("{call RPA_P_RESUMEN_TRX2(?, ?, ?)}");
-            cs.setString(1, fechaDesde);
-            cs.setString(2, fechaHasta);
-            cs.registerOutParameter(3, OracleTypes.CURSOR);
-            cs.execute();
-
-            ResultSet rs = (ResultSet) cs.getObject(3);
-
-            while (rs.next()){
-                ResumenTrx resumenTrx = new ResumenTrx();
-                resumenTrx.setId(rs.getLong("rownum"));
-                resumenTrx.setCodigoAgencia(rs.getInt("agencia"));
-                resumenTrx.setCodigoClaseCuenta(rs.getInt("codigo_clase_cuenta"));
-                resumenTrx.setDescripcionClase(rs.getString("descripcion_clase"));
-                resumenTrx.setCodigoTipoTransaccion(rs.getInt("Codigo_Tipo_Transaccion"));
-                resumenTrx.setDescripcion(rs.getString("descripcion"));
-                resumenTrx.setValor(rs.getFloat("valor"));
-                resumenTrx.setCantidad(rs.getInt("cantidad"));
-                listaResumenTrx.add(resumenTrx);
-            }
-            rs.close();
-            cs.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new Exception("Error al ejecutar el procedimiento RPA_P_COMISIONES_ATM2", e);
-        }
-        return listaResumenTrx;
-    }
- */
-/*
-	@Transactional
-    @Modifying
-    @Query(nativeQuery = true, value = "call RPA_P_RESUMEN_TRX(:Gd_fecha_desde, :Gd_fecha_hasta)")
-    void listaProcedure(@Param("Gd_fecha_desde") String gdFechaDesde,
-                        @Param("Gd_fecha_hasta") String gdFechaHasta);
 */
 

@@ -40,32 +40,28 @@ public class ResumenTrxControlador {
 			@ApiResponse(responseCode = "409", description = "Error 409"),
 			@ApiResponse(responseCode = "500", description = "internal server error") })
 	@PostMapping("/verid")
-	public ResponseEntity<Object> resumenTrx(@RequestBody RequestDate request) /*throws Exception*/ {
+	public ResponseEntity<Object> resumenTrx(@RequestBody RequestDate request) {
 
 		long startTime = System.currentTimeMillis();
-
 		log.info(SEPARADOR);
-		log.info("* METODO: resumentrx - F.Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(),
-				request.getGdFechaDesde(), request.getGdFechaHasta());
+		log.info("* METODO: resumentrx - F.Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(),	request.getGdFechaDesde(), request.getGdFechaHasta());
 
 		if (!utilerias.esFechaValida(request.getGdFechaDesde()) || !utilerias.esFechaValida(request.getGdFechaHasta())) {
 			log.error("Fecha invalida proporcionada.");
 			log.info(SEPARADOR);
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Fecha inválida proporcionada.");
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Fecha invalida proporcionada.");
 		}
 
 		List<ResumenTrx> listaResumenTrx = resumenTrxServicio.listaResumen(request.getGdFechaDesde(), request.getGdFechaHasta());
 
 		if (listaResumenTrx.isEmpty()) {
-			log.info("No hay data para resumen trx - F.Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(),
-					request.getGdFechaDesde(), request.getGdFechaHasta());
+			log.info("No hay data para resumen trx - F.Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(), request.getGdFechaDesde(), request.getGdFechaHasta());
 			log.info(SEPARADOR);
 			return new ResponseEntity<>("No hay datos para los parámetros ingresados", HttpStatus.NO_CONTENT);
 		}
 
 		long endTime = System.currentTimeMillis();
 		long duration = endTime - startTime;
-
 		log.info("Tiempo de ejecucion resumentrx: {}ms", duration);
 		log.info(SEPARADOR);
 

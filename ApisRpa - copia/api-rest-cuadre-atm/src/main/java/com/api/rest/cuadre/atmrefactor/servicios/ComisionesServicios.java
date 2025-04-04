@@ -20,7 +20,7 @@ public class ComisionesServicios {
 	}
 
 	@Async
-	public CompletableFuture<List<Comisiones>> listaComisiones(String gdFechaDesde, String gdFechaHasta) /*throws Exception */{
+	public CompletableFuture<List<Comisiones>> listaComisiones(String gdFechaDesde, String gdFechaHasta) throws Exception {
 		List<Comisiones> listaComisiones = comisionesRepositorio.listaComisionesR(gdFechaDesde, gdFechaHasta);
 		return CompletableFuture.completedFuture(listaComisiones);
 	}

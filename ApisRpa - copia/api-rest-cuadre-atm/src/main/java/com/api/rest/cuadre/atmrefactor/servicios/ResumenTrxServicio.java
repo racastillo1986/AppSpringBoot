@@ -1,11 +1,10 @@
 package com.api.rest.cuadre.atmrefactor.servicios;
 
-import java.util.List;
-
-import org.springframework.stereotype.Service;
-
 import com.api.rest.cuadre.atmrefactor.entidades.ResumenTrx;
 import com.api.rest.cuadre.atmrefactor.repositorios.ResumenTrxRepositorio;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ResumenTrxServicio {
@@ -16,13 +15,8 @@ public class ResumenTrxServicio {
         this.resumenTrxRepositorio = resumenTrxRepositorio;
     }
 
-    public List<ResumenTrx> listaResumen(String gdFechaDesde, String gdFechaHasta) /*throws Exception */{
-
+    public List<ResumenTrx> listaResumen(String gdFechaDesde, String gdFechaHasta) {
 		return resumenTrxRepositorio.lista(gdFechaDesde, gdFechaHasta);
-/*
-		resumenTrxRepositorio.listaProcedure(gdFechaDesde, gdFechaHasta);		
-        return resumenTrxRepositorio.findAll();
-*/
     }
 
 }

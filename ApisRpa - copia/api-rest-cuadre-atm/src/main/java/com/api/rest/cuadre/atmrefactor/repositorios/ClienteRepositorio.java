@@ -16,6 +16,7 @@ public interface ClienteRepositorio extends JpaRepository<Clientes, Long> {
 	@Query(nativeQuery = true, value = "call RPA_P_CLIENTES_X_TRX(:Gd_fecha_desde, :Gd_fecha_hasta)")
 	void listaClientes(@Param("Gd_fecha_desde") String gdFechaDesde,
 					   @Param("Gd_fecha_hasta") String gdFechaHasta);
+}
 
 /*
 	private final DataSource dataSource;
@@ -24,9 +25,7 @@ public interface ClienteRepositorio extends JpaRepository<Clientes, Long> {
 	public ClienteRepositorio(JdbcTemplate jdbc){
 		this.jdbc = jdbc;
 	}
-*/
 
-/*
 	public List<Clientes> listaClientesTrx(String fechaDesde, String fechaHasta){
 		String query = "select rownum,\n" +
 				"           a.codigo_usuario,\n" +
@@ -168,4 +167,4 @@ public interface ClienteRepositorio extends JpaRepository<Clientes, Long> {
 	}
 */
 
-}
+

@@ -4,6 +4,9 @@ import com.api.rest.cuadre.atmrefactor.entidades.RequestDate;
 import com.api.rest.cuadre.atmrefactor.entidades.TrxDiarias;
 import com.api.rest.cuadre.atmrefactor.servicios.TrxServicio;
 import com.api.rest.cuadre.utils.Utilerias;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,8 +34,13 @@ public class TrxControlador {
         this.utilerias = utilerias;
     }
 
+    @Operation(summary = "clientesPorTrx", description = "Metodo para consulta de Transacciones Diarias")
+    @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Solicitud Aceptada"),
+            @ApiResponse(responseCode = "400", description = "Solicitud inválida"),
+            @ApiResponse(responseCode = "409", description = "Error 409"),
+            @ApiResponse(responseCode = "500", description = "internal server error")})
     @PostMapping("/verid")
-    public ResponseEntity<Object> trx(@RequestBody RequestDate request) throws Exception {
+    public ResponseEntity<Object> trx(@RequestBody RequestDate request) throws ExecutionException, InterruptedException {
         long startTime = System.currentTimeMillis();
         log.info(SEPARADOR);
         log.info("* METODO: trxDiarias - F.Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(), request.getGdFechaDesde(), request.getGdFechaHasta());

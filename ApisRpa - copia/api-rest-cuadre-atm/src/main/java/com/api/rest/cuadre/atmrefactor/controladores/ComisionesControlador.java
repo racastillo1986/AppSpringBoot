@@ -42,7 +42,7 @@ public class ComisionesControlador {
             @ApiResponse(responseCode = "500", description = "internal server error")})
     @PostMapping("/verid")
     @Transactional(timeout = 360000)
-    public ResponseEntity<Object> verId(@RequestBody RequestDate request) throws ExecutionException, InterruptedException {
+    public ResponseEntity<Object> verId(@RequestBody RequestDate request) throws Exception {
         long startTime = System.currentTimeMillis();
         log.info(SEPARADOR);
         log.info("METODO: Comisiones - F. Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(),
