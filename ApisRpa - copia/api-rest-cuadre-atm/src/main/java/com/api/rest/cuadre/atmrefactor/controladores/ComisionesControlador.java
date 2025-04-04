@@ -19,7 +19,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 @RestController
 @RequestMapping("/rpa_comision_diaria_atm")
@@ -48,7 +47,7 @@ public class ComisionesControlador {
         log.info("METODO: Comisiones - F. Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(),
                 request.getGdFechaDesde(), request.getGdFechaHasta());
 
-        if (!utilerias.esFechaValida(request.getGdFechaDesde()) || !utilerias.esFechaValida(request.getGdFechaHasta())) {
+        if (utilerias.esFechaValida(request.getGdFechaDesde()) || utilerias.esFechaValida(request.getGdFechaHasta())) {
             log.error("Fecha invalida proporcionada.");
             log.info(SEPARADOR);
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Fecha inválida proporcionada.");
@@ -56,7 +55,6 @@ public class ComisionesControlador {
 
         CompletableFuture<List<Comisiones>> listaComisionesFuture = comisionesServicios.listaComisiones(request.getGdFechaDesde(),
                 request.getGdFechaHasta());
-
         List<Comisiones> listaComisiones = listaComisionesFuture.get();
 
         if (listaComisiones == null || listaComisiones.isEmpty()) {

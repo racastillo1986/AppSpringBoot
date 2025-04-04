@@ -18,9 +18,9 @@ public class Utilerias {
 			SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
 			formato.setLenient(false);
 			formato.parse(fecha);
-			return true;
-		} catch (ParseException e) {
 			return false;
+		} catch (ParseException e) {
+			return true;
 		}
 	}
 }

@@ -46,7 +46,7 @@ public class ClienteControlador {
         log.info(SEPARADOR);
         log.info("* METODO: getTrxClientes - F.Consumo: {} F.Desde: {} - F.Hasta: {}", utilerias.fechaHora(), request.getGdFechaDesde(), request.getGdFechaHasta());
 
-        if (!utilerias.esFechaValida(request.getGdFechaDesde()) || !utilerias.esFechaValida(request.getGdFechaHasta())) {
+        if (utilerias.esFechaValida(request.getGdFechaDesde()) || utilerias.esFechaValida(request.getGdFechaHasta())) {
             log.error("Fecha invalida proporcionada.");
             log.info(SEPARADOR);
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Fecha inválida proporcionada.");
