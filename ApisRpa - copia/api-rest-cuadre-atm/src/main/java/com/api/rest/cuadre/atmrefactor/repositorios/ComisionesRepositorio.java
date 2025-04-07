@@ -59,7 +59,7 @@ public class ComisionesRepositorio {
                     // Convertir la fecha formateada a un objeto Date
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX");
                     Date fechaValida = sdf.parse(formattedFechaValida);
-                    comision.setFechaValida(fechaValida); // Establecer el objeto Date
+                    comision.setFechaValida(fechaValida);
                 }
                 comision.setHora(rs.getString("hora5"));
                 comision.setCodigoTipoTransaccion(rs.getInt("codigo_tipo_transaccion"));
@@ -86,8 +86,7 @@ public class ComisionesRepositorio {
         return comisiones;
     }
 }
-
-	/*
+/*
 	@Transactional
     @Modifying
     @Query(nativeQuery = true, value = "call RPA_P_COMISIONES_ATM(:Gd_fecha_desde, :Gd_fecha_hasta)")

@@ -62,7 +62,7 @@ public class SeedControlador {
 			log.info("No hay data para valoresSeed - F.Consumo: {} Identificacion: {} F.Desde: {} F.Hasta: {}",
 					utilerias.fechaHora(), request.getGvIdentificacion(), request.getGdFechaDesde(), request.getGdFechaHasta());
 			log.info(SEPARADOR);
-			return new ResponseEntity<>("No hay datos para los parámetros ingresados", HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>("[]", HttpStatus.NO_CONTENT);
 		}
 
 		long endTime = System.currentTimeMillis();

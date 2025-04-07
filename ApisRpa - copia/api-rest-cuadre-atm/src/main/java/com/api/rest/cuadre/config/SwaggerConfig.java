@@ -20,7 +20,7 @@ public class SwaggerConfig {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("com.api.rest.cuadre.controladores"))
+				.apis(RequestHandlerSelectors.basePackage("com.api.rest.cuadre.atmrefactor.controladores"))
 				.paths(PathSelectors.any()).build().apiInfo(getApiInfo());
 	}
 

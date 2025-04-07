@@ -60,7 +60,7 @@ public class ComisionesControlador {
         if (listaComisiones == null || listaComisiones.isEmpty()) {
             log.warn("No hay data para Comisiones F.Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(), request.getGdFechaDesde(), request.getGdFechaHasta());
             log.info(SEPARADOR);
-            return new ResponseEntity<>("No hay datos para los parámetros ingresados", HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>("[]", HttpStatus.NO_CONTENT);
         }
 
         long endTime = System.currentTimeMillis();

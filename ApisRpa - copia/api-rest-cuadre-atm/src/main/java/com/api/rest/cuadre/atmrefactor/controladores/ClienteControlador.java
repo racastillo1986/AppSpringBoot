@@ -52,13 +52,12 @@ public class ClienteControlador {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Fecha inválida proporcionada.");
         }
 
-        List<Clientes> clientesTrxs = clienteServicios.listaTrxClientes(request.getGdFechaDesde(),
-                request.getGdFechaHasta());
+        List<Clientes> clientesTrxs = clienteServicios.listaTrxClientes(request.getGdFechaDesde(), request.getGdFechaHasta());
 
         if (clientesTrxs.isEmpty()) {
             log.info("No hay data para getTrxClientes - F.Consumo: {} F.Desde: {} - F.Hasta: {}", utilerias.fechaHora(), request.getGdFechaDesde(), request.getGdFechaHasta());
-			log.info(SEPARADOR);
-            return new ResponseEntity<>("No hay datos para los parámetros ingresados", HttpStatus.NO_CONTENT);
+            log.info(SEPARADOR);
+            return new ResponseEntity<>("[]", HttpStatus.NO_CONTENT);
         }
 
         long endTime = System.currentTimeMillis();
@@ -67,5 +66,4 @@ public class ClienteControlador {
         log.info(SEPARADOR);
         return new ResponseEntity<>(clientesTrxs, HttpStatus.OK);
     }
-
 }

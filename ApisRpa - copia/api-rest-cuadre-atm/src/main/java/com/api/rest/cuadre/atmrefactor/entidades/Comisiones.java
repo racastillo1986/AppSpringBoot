@@ -1,23 +1,10 @@
 package com.api.rest.cuadre.atmrefactor.entidades;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
-@Entity
-@Table(name = "rpa_comision_diarias_atm")
 @Setter
 @Getter
 @AllArgsConstructor
@@ -25,61 +12,45 @@ import lombok.ToString;
 @Builder
 @ToString
 public class Comisiones {
-	
-	@Id
-	private Long id;
 
-	@Column(name = "numero_cuenta")
-	@JsonProperty("numero_cuenta")
-	private Long numeroCuenta;
+    private Long id;
 
-	@Column(name = "secuencia_trx_cms")
-	@JsonProperty("secuencia_trx_cms")
-	private int secuenciaTrxCms;
+    @JsonProperty("numero_cuenta")
+    private Long numeroCuenta;
 
-	@Column(name = "fecha_valida")
-	@JsonProperty("fecha_valida")
-	private Date fechaValida;
+    @JsonProperty("secuencia_trx_cms")
+    private int secuenciaTrxCms;
 
-	@Column(name = "hora")
-	private String hora;
+    @JsonProperty("fecha_valida")
+    private Date fechaValida;
 
-	@Column(name = "codigo_tipo_transaccion")
-	@JsonProperty("codigo_tipo_transaccion")
-	private int codigoTipoTransaccion;
+    private String hora;
 
-	@Column(name = "descripcion")
-	private String descripcion;
+    @JsonProperty("codigo_tipo_transaccion")
+    private int codigoTipoTransaccion;
 
-	@Column(name = "clase_cuenta")
-	@JsonProperty("clase_cuenta")
-	private String claseCuenta;
+    private String descripcion;
 
-	@Column(name = "clase_de_cuenta")
-	@JsonProperty("clase_de_cuenta")
-	private int claseDeCuenta;
+    @JsonProperty("clase_cuenta")
+    private String claseCuenta;
 
-	@Column(name = "valor")
-	private Float valor;
+    @JsonProperty("clase_de_cuenta")
+    private int claseDeCuenta;
 
-	@Column(name = "codigo_agencia")
-	@JsonProperty("codigo_agencia")
-	private int codigoAgencia;
+    private Float valor;
 
-	@Column(name = "nombre_agencia")
-	@JsonProperty("nombre_agencia")
-	private String nombreAgencia;
+    @JsonProperty("codigo_agencia")
+    private int codigoAgencia;
 
-	@Column(name = "numero_tarjeta")
-	@JsonProperty("numero_tarjeta")
-	private String numeroTarjeta;
+    @JsonProperty("nombre_agencia")
+    private String nombreAgencia;
 
-	@Column(name = "tipo_transaccion")
-	@JsonProperty("tipo_transaccion")
-	private String tipoTransaccion;
+    @JsonProperty("numero_tarjeta")
+    private String numeroTarjeta;
 
-	@Column(name = "codigo_canal_adquiriente")
-	@JsonProperty("codigo_canal_adquiriente")
-	private String codigoCanalAdquiriente;
+    @JsonProperty("tipo_transaccion")
+    private String tipoTransaccion;
 
+    @JsonProperty("codigo_canal_adquiriente")
+    private String codigoCanalAdquiriente;
 }
