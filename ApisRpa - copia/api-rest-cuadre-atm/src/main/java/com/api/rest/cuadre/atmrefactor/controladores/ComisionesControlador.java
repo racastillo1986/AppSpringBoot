@@ -1,6 +1,7 @@
 package com.api.rest.cuadre.atmrefactor.controladores;
 
 import com.api.rest.cuadre.atmrefactor.entidades.Comisiones;
+import com.api.rest.cuadre.atmrefactor.entidades.ErrorResponse;
 import com.api.rest.cuadre.atmrefactor.entidades.RequestDate;
 import com.api.rest.cuadre.atmrefactor.servicios.ComisionesServicios;
 import com.api.rest.cuadre.utils.Utilerias;
@@ -15,8 +16,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -41,34 +42,42 @@ public class ComisionesControlador {
             @ApiResponse(responseCode = "500", description = "internal server error")})
     @PostMapping("/verid")
     @Transactional(timeout = 360000)
-    public ResponseEntity<Object> verId(@RequestBody RequestDate request) throws Exception {
+    public CompletableFuture<ResponseEntity<?>> verId(@RequestBody RequestDate request) throws Exception {
         long startTime = System.currentTimeMillis();
         log.info(SEPARADOR);
-        log.info("METODO: Comisiones - F. Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(),
-                request.getGdFechaDesde(), request.getGdFechaHasta());
+        log.info("METODO: Comisiones - F. Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(), request.getGdFechaDesde(), request.getGdFechaHasta());
 
         if (utilerias.esFechaValida(request.getGdFechaDesde()) || utilerias.esFechaValida(request.getGdFechaHasta())) {
             log.error("Fecha invalida proporcionada.");
             log.info(SEPARADOR);
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Fecha inválida proporcionada.");
+            ErrorResponse errorResponse = new ErrorResponse(
+                    LocalDateTime.now().toString(),
+                    400,
+                    "Bad Request",
+                    "/CuadreATM/rpa_comision_diaria_atm/verid"
+            );
+            return CompletableFuture.completedFuture(new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST));
         }
 
-        CompletableFuture<List<Comisiones>> listaComisionesFuture = comisionesServicios.listaComisiones(request.getGdFechaDesde(),
-                request.getGdFechaHasta());
-        List<Comisiones> listaComisiones = listaComisionesFuture.get();
+        CompletableFuture<List<Comisiones>> listaComisionesFuture = comisionesServicios.listaComisiones(request.getGdFechaDesde(), request.getGdFechaHasta());
 
-        if (listaComisiones == null || listaComisiones.isEmpty()) {
-            log.warn("No hay data para Comisiones F.Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(), request.getGdFechaDesde(), request.getGdFechaHasta());
+        return listaComisionesFuture.thenApply(listaComisiones -> {
+            if (listaComisiones == null || listaComisiones.isEmpty()) {
+                log.warn("No hay data para Comisiones F.Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(), request.getGdFechaDesde(), request.getGdFechaHasta());
+                log.info(SEPARADOR);
+                return new ResponseEntity<>("[]", HttpStatus.BAD_REQUEST);
+            }
+
+            long endTime = System.currentTimeMillis();
+            long duration = endTime - startTime;
+
+            log.info("Tiempo de ejecucion METODO: Comisiones: {}ms", duration);
             log.info(SEPARADOR);
-            return new ResponseEntity<>("[]", HttpStatus.NO_CONTENT);
-        }
 
-        long endTime = System.currentTimeMillis();
-        long duration = endTime - startTime;
-
-        log.info("Tiempo de ejecucion METODO: Comisiones: {}ms", duration);
-        log.info(SEPARADOR);
-
-        return new ResponseEntity<>(listaComisiones, HttpStatus.OK);
+            return new ResponseEntity<>(listaComisiones, HttpStatus.OK);
+        }).exceptionally(ex -> {
+            log.error("Error al obtener las comisiones: {}", ex.getMessage());
+            return new ResponseEntity<>("Error interno", HttpStatus.INTERNAL_SERVER_ERROR);
+        });
     }
 }

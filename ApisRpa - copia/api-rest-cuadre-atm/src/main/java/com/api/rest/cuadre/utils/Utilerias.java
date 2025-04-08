@@ -1,5 +1,6 @@
 package com.api.rest.cuadre.utils;
 
+import com.api.rest.cuadre.atmrefactor.entidades.RequestDate;
 import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
@@ -22,5 +23,9 @@ public class Utilerias {
 		} catch (ParseException e) {
 			return true;
 		}
+	}
+
+	public boolean fechasInvalidas(RequestDate request) {
+		return esFechaValida(request.getGdFechaDesde()) || esFechaValida(request.getGdFechaHasta());
 	}
 }

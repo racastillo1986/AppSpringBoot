@@ -22,5 +22,4 @@ public class TrxServicio {
         List<TrxDiarias> listaTrx = repositorio.listaTrx(fechaDesde, fechaHasta);
         return CompletableFuture.completedFuture(listaTrx);
     }
-
 }
