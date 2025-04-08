@@ -28,7 +28,7 @@ public class ClienteControlador {
     private final Utilerias utilerias;
 
     private static final String SEPARADOR = "**********************************************************************************";
-    private static final String FECHA_INVALIDA_MSG = "Fecha invalida proporcionada.";
+    private static final String FECHA_INVALIDA_MSG = "* Fecha invalida proporcionada.";
 
     public ClienteControlador(ClienteServicios clienteServicios, Utilerias utilerias) {
         this.clienteServicios = clienteServicios;
@@ -68,7 +68,7 @@ public class ClienteControlador {
 
         long endTime = System.currentTimeMillis();
         long duration = endTime - startTime;
-        log.info("Tiempo de ejecucion getTrxClientes: {}ms", duration);
+        log.info("* Tiempo de ejecucion getTrxClientes: {}ms", duration);
         log.info(SEPARADOR);
         return ResponseEntity.ok(clientesTrxs);
     }

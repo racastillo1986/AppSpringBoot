@@ -1,7 +1,9 @@
 package com.api.rest.cuadre.atmrefactor.controladores;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
+import com.api.rest.cuadre.atmrefactor.entidades.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +30,7 @@ public class ResumenTrxControlador {
 	private final ResumenTrxServicio resumenTrxServicio;
 	private final Utilerias utilerias;
 	private static final String SEPARADOR = "**********************************************************";
+	private static final String FECHA_INVALIDA_MSG = "* Fecha invalida proporcionada.";
 
 	public ResumenTrxControlador(ResumenTrxServicio resumenTrxServicio, Utilerias utilerias) {
 		this.resumenTrxServicio = resumenTrxServicio;
@@ -46,26 +49,31 @@ public class ResumenTrxControlador {
 		log.info(SEPARADOR);
 		log.info("* METODO: resumentrx - F.Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(),	request.getGdFechaDesde(), request.getGdFechaHasta());
 
-		if (utilerias.esFechaValida(request.getGdFechaDesde()) || utilerias.esFechaValida(request.getGdFechaHasta())) {
-			log.error("Fecha invalida proporcionada.");
+		if (utilerias.fechasInvalidas(request)) {
+			log.error(FECHA_INVALIDA_MSG);
 			log.info(SEPARADOR);
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Fecha invalida proporcionada.");
+			ErrorResponse errorResponse = new ErrorResponse(
+					LocalDateTime.now().toString(),
+					400,
+					"Bad Request",
+					"/CuadreATM/rpa_resumen_trx_atm/verid"
+			);
+			return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
 		}
 
 		List<ResumenTrx> listaResumenTrx = resumenTrxServicio.listaResumen(request.getGdFechaDesde(), request.getGdFechaHasta());
 
 		if (listaResumenTrx.isEmpty()) {
-			log.info("No hay data para resumen trx - F.Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(), request.getGdFechaDesde(), request.getGdFechaHasta());
+			log.info("* No hay data para resumen trx - F.Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(), request.getGdFechaDesde(), request.getGdFechaHasta());
 			log.info(SEPARADOR);
-			return new ResponseEntity<>("[]", HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>("[]", HttpStatus.BAD_REQUEST);
 		}
 
 		long endTime = System.currentTimeMillis();
 		long duration = endTime - startTime;
-		log.info("Tiempo de ejecucion resumentrx: {}ms", duration);
+		log.info("* Tiempo de ejecucion resumentrx: {}ms", duration);
 		log.info(SEPARADOR);
 
-		return new ResponseEntity<>(listaResumenTrx, HttpStatus.OK);
+		return ResponseEntity.ok(listaResumenTrx);
 	}
-
 }

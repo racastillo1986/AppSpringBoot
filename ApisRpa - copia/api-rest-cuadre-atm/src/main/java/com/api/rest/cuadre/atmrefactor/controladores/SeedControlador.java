@@ -1,7 +1,9 @@
 package com.api.rest.cuadre.atmrefactor.controladores;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
+import com.api.rest.cuadre.atmrefactor.entidades.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,12 +30,11 @@ public class SeedControlador {
 	private final SeedServicio seedServicio;
 	private final Utilerias utilerias;
 	private static final String SEPARADOR = "**********************************************************************************";
+	private static final String FECHA_INVALIDA_MSG = "* Fecha invalida proporcionada.";
 
 	public SeedControlador(SeedServicio seedServicio, Utilerias utilerias) {
-
 		this.seedServicio = seedServicio;
 		this.utilerias = utilerias;
-
 	}
 
 	@Operation(summary = "seedValores", description = "Metodo para consulta de SeedBilling")
@@ -50,26 +51,30 @@ public class SeedControlador {
 				request.getGdFechaHasta());
 
 		if (utilerias.esFechaValida(request.getGdFechaDesde()) || utilerias.esFechaValida(request.getGdFechaHasta())) {
-			log.error("Fecha invalida proporcionada.");
+			log.error(FECHA_INVALIDA_MSG);
 			log.info(SEPARADOR);
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Fecha inválida proporcionada.");
+			ErrorResponse errorResponse = new ErrorResponse(
+					LocalDateTime.now().toString(),
+					400,
+					"Bad Request",
+					"/CuadreATM/seedValores/verid"
+			);
+			return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
 		}
 
-		List<Seed> seedValores = seedServicio.listaSeed(request.getGvIdentificacion(), request.getGdFechaDesde(),
-				request.getGdFechaHasta());
+		List<Seed> seedValores = seedServicio.listaSeed(request.getGvIdentificacion(), request.getGdFechaDesde(), request.getGdFechaHasta());
 
 		if (seedValores.isEmpty()) {
 			log.info("No hay data para valoresSeed - F.Consumo: {} Identificacion: {} F.Desde: {} F.Hasta: {}",
 					utilerias.fechaHora(), request.getGvIdentificacion(), request.getGdFechaDesde(), request.getGdFechaHasta());
 			log.info(SEPARADOR);
-			return new ResponseEntity<>("[]", HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>("[]", HttpStatus.BAD_REQUEST);
 		}
 
 		long endTime = System.currentTimeMillis();
 		long duration = endTime - startTime;
-		log.info("Tiempo de ejecucion valoresSeed {}ms: ", duration);
+		log.info("* Tiempo de ejecucion valoresSeed {}ms: ", duration);
 		log.info(SEPARADOR);
-		return new ResponseEntity<>(seedValores, HttpStatus.OK);
+		return ResponseEntity.ok(seedValores);
 	}
-
 }

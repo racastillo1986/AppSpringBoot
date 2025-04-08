@@ -10,7 +10,7 @@ import com.api.rest.cuadre.atmrefactor.repositorios.SeedRepositorio;
 @Service
 public class SeedServicio {
 	
-	private SeedRepositorio seedRepositorio;
+	private final SeedRepositorio seedRepositorio;
 	
 	public SeedServicio(SeedRepositorio seedRepositorio) {
 		this.seedRepositorio = seedRepositorio;
@@ -20,5 +20,4 @@ public class SeedServicio {
 		seedRepositorio.listaProcedure(gvIdentificacion, gdFechaDesde, gdFechaHasta);
 		return seedRepositorio.findAll();
 	}
-
 }

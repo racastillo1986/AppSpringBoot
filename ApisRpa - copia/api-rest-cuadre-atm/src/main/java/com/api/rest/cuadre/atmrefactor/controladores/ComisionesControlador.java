@@ -45,10 +45,10 @@ public class ComisionesControlador {
     public CompletableFuture<ResponseEntity<?>> verId(@RequestBody RequestDate request) throws Exception {
         long startTime = System.currentTimeMillis();
         log.info(SEPARADOR);
-        log.info("METODO: Comisiones - F. Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(), request.getGdFechaDesde(), request.getGdFechaHasta());
+        log.info("* METODO: Comisiones - F. Consumo: {} F.Desde: {} F.Hasta: {}", utilerias.fechaHora(), request.getGdFechaDesde(), request.getGdFechaHasta());
 
         if (utilerias.esFechaValida(request.getGdFechaDesde()) || utilerias.esFechaValida(request.getGdFechaHasta())) {
-            log.error("Fecha invalida proporcionada.");
+            log.error("* Fecha invalida proporcionada.");
             log.info(SEPARADOR);
             ErrorResponse errorResponse = new ErrorResponse(
                     LocalDateTime.now().toString(),
@@ -71,7 +71,7 @@ public class ComisionesControlador {
             long endTime = System.currentTimeMillis();
             long duration = endTime - startTime;
 
-            log.info("Tiempo de ejecucion METODO: Comisiones: {}ms", duration);
+            log.info("* Tiempo de ejecucion METODO: Comisiones: {}ms", duration);
             log.info(SEPARADOR);
 
             return new ResponseEntity<>(listaComisiones, HttpStatus.OK);
